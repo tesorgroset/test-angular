@@ -1,0 +1,35 @@
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th (click)="orden('firstName')">Nombre</th>
+      <th (click)="orden('edad')">Edad</th>
+      <th (click)="orden('matricula')">Matricula</th>
+      <th (click)="orden('modeloCoche')">Modelo</th>
+      <th>#</th>
+      <th>#</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let persona of listaPersonas">
+      <td>
+        <a class="badge badge-light" routerLink="/detalle-persona/{{persona.id}}">{{persona.firstName}} - {{persona.lastName}}</a>
+      </td>
+      <td>
+        {{persona.edad}}
+      </td>
+      <td>
+        {{persona.matricula}}
+      </td>
+      <td>
+        {{persona.modeloCoche}}
+      </td>
+      <td>
+        <a class="badge badge-primary" routerLink="/editar-persona/{{persona.id}}">Modificar</a>
+      </td>
+      <td>
+        <a class="badge badge-primary" [routerLink] = "" (click)="deletePerson(persona.id)">Borrar</a>
+      </td>  
+    </tr>
+  </tbody>
+</table>
+<button class="btn btn-dark" routerLink="/anadir-persona">AÑADIR</button>
