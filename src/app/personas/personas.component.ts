@@ -13,6 +13,8 @@ export class PersonasComponent implements OnInit {
 
   public listaPersonas : Persona[];
 
+  public tipoOrden : string;
+
   constructor(private personService : PersonService) { }
 
   ngOnInit() : void {
@@ -20,8 +22,13 @@ export class PersonasComponent implements OnInit {
     this.loadAll();
   }
 
-  orden(tipoOrden){
-    this.listaPersonas = _.sortBy(this.listaPersonas,tipoOrden);
+  orden(tipoOrden : string){
+    if (tipoOrden != null && tipoOrden === this.tipoOrden){
+      this.listaPersonas = this.listaPersonas.reverse();
+    }else{
+      this.tipoOrden = tipoOrden;
+      this.listaPersonas = _.sortBy(this.listaPersonas,tipoOrden);
+    }
   }
 
   public deletePerson(id : number) : void {
@@ -35,6 +42,7 @@ export class PersonasComponent implements OnInit {
     observableAll.subscribe(data => {
       console.log('despues de suscribir');
       this.listaPersonas = data._embedded.persons;
+      
     },err => {
       console.log('error en la suscripcion: '+err);
     });
