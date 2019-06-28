@@ -15,6 +15,15 @@ export class PersonasComponent implements OnInit {
 
   public tipoOrden : string;
 
+  public firstNamesort : boolean = false;
+  public edadsort : boolean = false;
+  public matriculasort : boolean = false;
+  public modeloCochesort : boolean = false;
+  firstNamecurrentsort: boolean;
+  edadcurrentsort: boolean;
+  matriculacurrentsort: boolean;
+  modeloCochecurrentsort: boolean;
+
   constructor(private personService : PersonService) { }
 
   ngOnInit() : void {
@@ -29,6 +38,16 @@ export class PersonasComponent implements OnInit {
       this.tipoOrden = tipoOrden;
       this.listaPersonas = _.sortBy(this.listaPersonas,tipoOrden);
     }
+    this.changeIcon(tipoOrden);
+  }
+
+  private changeIcon(tipoOrden : string) : void {
+    this.firstNamecurrentsort = false;
+    this.edadcurrentsort = false;
+    this.matriculacurrentsort = false;
+    this.modeloCochecurrentsort = false;
+    eval('this.'+tipoOrden+'currentsort = true');
+    eval('this.'+tipoOrden+'sort = !this.'+tipoOrden+'sort');
   }
 
   public deletePerson(id : number) : void {
@@ -42,7 +61,7 @@ export class PersonasComponent implements OnInit {
     observableAll.subscribe(data => {
       console.log('despues de suscribir');
       this.listaPersonas = data._embedded.persons;
-      
+      this.orden('firstName');
     },err => {
       console.log('error en la suscripcion: '+err);
     });

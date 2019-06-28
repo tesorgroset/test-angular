@@ -1,13 +1,26 @@
   <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th style="width:35%" (click)="orden('firstName')">
-        Nombre
-        
+      <th style="width:35%">
+        <span  (click)="orden('firstName')" style="cursor: pointer;margin-right: 5px">Nombre</span>
+        <span *ngIf="firstNamesort && firstNamecurrentsort" class="fa fa-sort-asc"></span>
+        <span *ngIf="!firstNamesort && firstNamecurrentsort" class="fa fa-sort-desc"></span>
       </th>
-      <th style="width:5%" (click)="orden('edad')">Edad</th>
-      <th style="width:20%" (click)="orden('matricula')">Matricula</th>
-      <th style="width:30%" (click)="orden('modeloCoche')">Modelo</th>
+      <th style="width:10%">
+        <span style="cursor: pointer;margin-right: 5px" (click)="orden('edad')">Edad</span>
+        <span *ngIf="edadsort && edadcurrentsort" class="fa fa-sort-asc"></span>
+        <span *ngIf="!edadsort && edadcurrentsort" class="fa fa-sort-desc"></span>
+      </th>
+      <th style="width:20%">
+          <span style="cursor: pointer;margin-right: 5px" (click)="orden('matricula')">Matricula</span>
+        <span *ngIf="matriculasort && matriculacurrentsort" class="fa fa-sort-asc"></span>
+        <span *ngIf="!matriculasort && matriculacurrentsort" class="fa fa-sort-desc"></span>
+      </th>
+      <th style="width:25%">
+        <span style="cursor: pointer;margin-right: 5px" (click)="orden('modeloCoche')">Modelo</span>
+        <span *ngIf="modeloCochesort && modeloCochecurrentsort" class="fa fa-sort-asc"></span>
+        <span *ngIf="!modeloCochesort && modeloCochecurrentsort" class="fa fa-sort-desc"></span>
+      </th>
       <th style="width:5%"></th>
       <th style="width:5%"></th>
     </tr>
@@ -31,14 +44,8 @@
       </td>
       <td>
         <a class="badge badge-primary" [routerLink] = "" (click)="deletePerson(persona.id)">Borrar</a>
-      </td>  
+      </td>
     </tr>
   </tbody>
 </table>
 <button class="btn btn-dark" routerLink="/anadir-persona">AÑADIR</button><br>
-<ul>
-  <li><fa-icon icon="coffee" size="3x"></fa-icon></li>
-  <li><fa-icon icon="check"></fa-icon></li>
-  <li><fa-icon icon="spinner" spin="true" size="3x"></fa-icon></li>
-  <li><fa-icon icon="envelope" rotate="90"></fa-icon></li>
-</ul>
