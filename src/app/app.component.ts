@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonService } from './person.service';
+import { TranslateService } from '@ngx-translate/core';
 import { Persona } from './app.persona';
 import { Observable } from 'rxjs';
 
@@ -10,13 +11,16 @@ import { Observable } from 'rxjs';
 })
 
 export class AppComponent implements OnInit{
+  private lenguajeActivo = 'en';
   private title : String;
   
-  constructor (private personService : PersonService){
+  constructor (private personService : PersonService,
+               private translateService : TranslateService){
     this.title = 'prueba de angular';
   }
   
   ngOnInit(): void {
+    this.translateService.setDefaultLang(this.lenguajeActivo);
   }
 
 

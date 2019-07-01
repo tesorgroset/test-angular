@@ -1,0 +1,12 @@
+{
+    "menu.listapersonas" : "Listado de personas",
+    "personas.nombre" : "Nombre",
+    "personas.apellido" : "Apellido",
+    "personas.edad" : "Edad",
+    "personas.direccion" : "Direccion",
+    "personas.modelo" : "Modelo",
+    "personas.matricula" : "Matricula",
+    "personas.anadir":"AÑADIR PERSONA",
+    "botones.enviar" : "ENVIAR",
+    "botones.cancelar" : "CANCELAR"
+}

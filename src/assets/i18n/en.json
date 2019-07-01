@@ -1,0 +1,13 @@
+{
+    "menu.listapersonas" : "Person's list",
+    "personas.nombre" : "Name",
+    "personas.apellido" : "Surname",
+    "personas.edad" : "Age",
+    "personas.direccion" : "Address",
+    "personas.modelo" : "Model",
+    "personas.matricula" : "Plate",
+    "personas.anadir":"ADD PERSON",
+    "botones.enviar" : "SEND",
+    "botones.cancelar" : "CANCEL"
+
+}

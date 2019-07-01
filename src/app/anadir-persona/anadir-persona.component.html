@@ -1,13 +1,13 @@
-<P>AÑADIR PERSONA</P>
+<P>{{'personas.anadir' | translate}}</P>
 <div>
   <div class="form-row"> 
-    <div class="form-group col-md-4"><label>Nombre:</label>&nbsp;<input class="form-control" maxlength="60" type="text" [(ngModel)] = "persona.firstName"/></div>
-    <div class="form-group col-md-8"><label>Apellido: </label><input class="form-control" type="text" [(ngModel)] = "persona.lastName"/></div>
+    <div class="form-group col-md-4"><label>{{'personas.nombre' | translate}}:</label>&nbsp;<input class="form-control" maxlength="60" type="text" [(ngModel)] = "persona.firstName"/></div>
+    <div class="form-group col-md-8"><label>{{'personas.apellido' | translate}}: </label><input class="form-control" type="text" [(ngModel)] = "persona.lastName"/></div>
   </div>  
-  <div class="form-row"><div class="form-group col-md-1"><label>Edad: </label><input class="form-control" type="number" [(ngModel)] = "persona.edad"/></div>
-  <div class="form-group col-md-11"><label>Direccion: </label><input class="form-control" type="text" [(ngModel)] = "persona.direccion"/></div></div>
-  <div class="form-row"> <div class="form-group col-md-4"><label>Modelo: </label><input class="form-control" type="text" [(ngModel)] = "persona.modeloCoche"/></div>
-  <div class="form-group col-md-2"><label>Matricula: </label><input class="form-control" type="text" [(ngModel)] = "persona.matricula"/></div></div>
-  <button class="btn btn-dark mr-1" (click)="anadirPersona()">ENVIAR</button>
-  <button class="btn btn-dark" routerLink="/personas">CANCELAR</button>
+  <div class="form-row"><div class="form-group col-md-1"><label>{{'personas.edad' | translate}}: </label><input class="form-control" type="number" [(ngModel)] = "persona.edad"/></div>
+  <div class="form-group col-md-11"><label>{{'personas.direccion' | translate}}: </label><input class="form-control" type="text" [(ngModel)] = "persona.direccion"/></div></div>
+  <div class="form-row"> <div class="form-group col-md-4"><label>{{'personas.modelo' | translate}}: </label><input class="form-control" type="text" [(ngModel)] = "persona.modeloCoche"/></div>
+  <div class="form-group col-md-2"><label>{{'personas.matricula' | translate}}: </label><input class="form-control" type="text" [(ngModel)] = "persona.matricula"/></div></div>
+  <button class="btn btn-dark mr-1" (click)="anadirPersona()">{{'botones.enviar' | translate}}</button>
+  <button class="btn btn-dark" routerLink="/personas">{{'botones.cancelar' | translate}}</button>
 </div>
