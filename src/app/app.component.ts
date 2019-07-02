@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 
 export class AppComponent implements OnInit{
-  private lenguajeActivo = 'en';
+  private lenguajeActivo = 'es';
   private title : String;
   
   constructor (private personService : PersonService,

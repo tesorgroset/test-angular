@@ -1,12 +1,20 @@
 {
     "menu.listapersonas" : "Listado de personas",
+    "menu.seleccionaopcion" : "Opciones",
     "personas.nombre" : "Nombre",
     "personas.apellido" : "Apellido",
     "personas.edad" : "Edad",
     "personas.direccion" : "Direccion",
     "personas.modelo" : "Modelo",
     "personas.matricula" : "Matricula",
+
     "personas.anadir":"AÑADIR PERSONA",
+    "personas.modificarpersona:":"MODIFICACION DE PERSONA",
+    "detallepersona.persona":"Persona",
+
     "botones.enviar" : "ENVIAR",
-    "botones.cancelar" : "CANCELAR"
+    "botones.cancelar" : "CANCELAR",
+    "botones.modificar" : "Modificar",
+    "botones.borrar" : "Borrar",
+    "botones.anadir" : "AÑADIR"
 }

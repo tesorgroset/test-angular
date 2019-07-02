@@ -1,5 +1,6 @@
 {
     "menu.listapersonas" : "Person's list",
+    "menu.seleccionaopcion" : "Options",
     "personas.nombre" : "Name",
     "personas.apellido" : "Surname",
     "personas.edad" : "Age",
@@ -7,7 +8,11 @@
     "personas.modelo" : "Model",
     "personas.matricula" : "Plate",
     "personas.anadir":"ADD PERSON",
+    "personas.modificarpersona:":"UPDATE PERSON",
+    "detallepersona.persona":"Person",
     "botones.enviar" : "SEND",
-    "botones.cancelar" : "CANCEL"
-
+    "botones.cancelar" : "CANCEL",
+    "botones.modificar" : "Update",
+    "botones.borrar" : "Delete",
+    "botones.anadir" : "ADD"    
 }

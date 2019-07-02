@@ -1,3 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" routerLink="/personas" i18n="@@menu.listado">{{'menu.listapersonas' | translate}}</a>
+    <a class="navbar-brand" href="#">{{'menu.seleccionaopcion' | translate}}</a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item-active">
+                <a class="nav-link" routerLink="/personas">{{'menu.listapersonas' | translate}}<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+                <span style="cursor:pointer" (click)="cambiarIdioma('es')" class="flag-icon flag-icon-es"></span>
+            </li> 
+            <li class="nav-item">
+                <span style="cursor:pointer" (click)="cambiarIdioma('en')" class="flag-icon flag-icon-gb"></span>
+            </li> 
+
+        </ul>           
+    </div>
 </nav>

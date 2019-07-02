@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private translateService : TranslateService) { }
 
   ngOnInit() {
+  }
+
+  public cambiarIdioma(idioma : string) : void {
+    this.translateService.use(idioma);
   }
 
 }
