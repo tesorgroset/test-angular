@@ -15,6 +15,8 @@ import { MenuComponent } from './menu/menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'; 
 import { library } from '@fortawesome/fontawesome-svg-core'; 
 import { fas } from '@fortawesome/free-solid-svg-icons';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 //Translations
 
@@ -37,6 +39,8 @@ library.add(fas);
     AppRoutingModule,
     HttpModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatTooltipModule,    
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

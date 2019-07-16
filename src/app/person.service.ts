@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http' ;
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http' ;
 import { Persona } from './app.persona';
 import { tap, catchError, filter} from 'rxjs/operators';
 
@@ -8,6 +8,7 @@ const httpOptions = {
   headers: new HttpHeaders({'Content-type': 'application/json'})
 };
 const urlPersons = "http://localhost:8080/people";
+const urlAnioMatricula = "http://localhost:8080/personas/anio-matriculacion";
 
 @Injectable({
   providedIn: 'root'
@@ -58,7 +59,16 @@ export class PersonService {
   borrarPersona(id : Number) : Observable<Persona>{
     const url = `${urlPersons}/${id}`;
     return this.http.delete<Persona>(url,httpOptions);
-  } 
+  }
+
+  public obtenerAnioMatricula(matricula : string) : Observable<string>{
+    var params = new HttpParams()
+      .set('matricula',matricula);
+    var headers = new HttpHeaders()
+      .set('Content-type','text/plain')
+      .set('Accept','text/plain');
+    return this.http.get<string>(urlAnioMatricula,{headers,params,responseType: 'text' as 'json'});
+  }
 
   private handleError<T>(operacion: string, result?: T){
     return (error: any): Observable<T> => {

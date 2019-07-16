@@ -67,4 +67,13 @@ export class PersonasComponent implements OnInit {
     });
   } 
 
+  public getAnioMatricula(matricula : string) : void {
+    var aniomatricula = "";
+    this.personService.obtenerAnioMatricula(matricula).subscribe(data => {
+      aniomatricula = data;
+    },err =>{
+      console.log('error al obtener el anio de la matriucula: '+err.message);
+    });
+  }
+
 }
