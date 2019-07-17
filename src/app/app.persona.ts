@@ -6,4 +6,5 @@ export class Persona {
     direccion : string;
     modeloCoche : string;
     matricula : string;
+    aniomatricula : string;
 }

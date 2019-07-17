@@ -33,7 +33,7 @@
       <td>
         {{persona.edad}}
       </td>
-      <td [matTooltip]="getAnioMatricula(persona.matricula)">
+      <td (mouseover)="getAnioMatricula(persona)" [attr.title]="persona.aniomatricula">
         {{persona.matricula}}
       </td>
       <td>

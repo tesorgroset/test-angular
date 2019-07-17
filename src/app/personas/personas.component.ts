@@ -19,6 +19,9 @@ export class PersonasComponent implements OnInit {
   public edadsort : boolean = false;
   public matriculasort : boolean = false;
   public modeloCochesort : boolean = false;
+
+  public aniomatricula : string = "";
+
   firstNamecurrentsort: boolean;
   edadcurrentsort: boolean;
   matriculacurrentsort: boolean;
@@ -67,10 +70,11 @@ export class PersonasComponent implements OnInit {
     });
   } 
 
-  public getAnioMatricula(matricula : string) : void {
-    var aniomatricula = "";
-    this.personService.obtenerAnioMatricula(matricula).subscribe(data => {
-      aniomatricula = data;
+  public getAnioMatricula(persona : Persona) : void {
+    
+    this.personService.obtenerAnioMatricula(persona.matricula).subscribe(data => {
+      persona.aniomatricula = data;
+      console.log('año de matriculacion: '+this.aniomatricula);
     },err =>{
       console.log('error al obtener el anio de la matriucula: '+err.message);
     });
