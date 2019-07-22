@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PersonService } from './person.service';
 import { PersonasComponent } from './personas/personas.component';
 import { DetallePersonaComponent } from './detalle-persona/detalle-persona.component';
@@ -22,6 +22,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { LoaderComponent } from './components/shared/loader/loader.component';
+
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoaderService } from './services/loader.service';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
+
 library.add(fas);
 
 
@@ -32,9 +38,11 @@ library.add(fas);
     DetallePersonaComponent,
     AnadirPersonaComponent,
     EditarPersonaComponent,
-    MenuComponent
+    MenuComponent,
+    LoaderComponent
   ],
   imports: [
+    MatProgressSpinnerModule,
     BrowserModule,
     AppRoutingModule,
     HttpModule,
@@ -53,7 +61,8 @@ library.add(fas);
     FormsModule,
     FontAwesomeModule
   ],
-  providers: [PersonService],
+  providers: [PersonService,LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

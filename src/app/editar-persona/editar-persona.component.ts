@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PersonService } from '../person.service';
 import { Persona } from '../app.persona';
 import { ActivatedRoute, Router} from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-editar-persona',
@@ -14,7 +15,8 @@ export class EditarPersonaComponent implements OnInit {
 
   constructor(private personService : PersonService,
               private route : ActivatedRoute,
-              private routeNav : Router) {  }
+              private routeNav : Router,
+              private appComponent : AppComponent) {  }
 
   ngOnInit() {
     this.route.paramMap.subscribe(map => {
@@ -30,6 +32,8 @@ export class EditarPersonaComponent implements OnInit {
   public modificarPersona() : void{
     this.personService.addPersona(this.persona).subscribe(data => {
       this.routeNav.navigate(['/personas']);
+    },err => {
+      this.appComponent.errorMessages = ['Revise los campos: '+err.message];
     });
   }
 

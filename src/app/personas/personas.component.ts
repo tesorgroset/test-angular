@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Persona } from '../app.persona';
 import { PersonService } from '../person.service';
 import * as _ from 'lodash';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-personas',
@@ -27,10 +28,12 @@ export class PersonasComponent implements OnInit {
   matriculacurrentsort: boolean;
   modeloCochecurrentsort: boolean;
 
-  constructor(private personService : PersonService) { }
+  constructor(private personService : PersonService,
+    private appComponent : AppComponent) { }
 
   ngOnInit() : void {
     console.log('ngOninit');
+    this.appComponent.errorMessages = [];
     this.loadAll();
   }
 

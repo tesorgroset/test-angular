@@ -14,6 +14,7 @@ import { Title } from '@angular/platform-browser';
 export class AppComponent implements OnInit{
   private lenguajeActivo = 'es';
   private title : String;
+  public errorMessages : Array<string>;
   
   constructor (private personService : PersonService,
                private translateService : TranslateService,

@@ -3,6 +3,7 @@ import { PersonService } from '../person.service';
 import { Persona } from '../app.persona';
 import { ActivatedRoute, Router } from '@angular/router';
 import { routerNgProbeToken } from '@angular/router/src/router_module';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-anadir-persona',
@@ -14,7 +15,8 @@ export class AnadirPersonaComponent implements OnInit {
   public persona : Persona;
 
   constructor(private sevicioPersona : PersonService,
-              private route : Router) { }
+              private route : Router,
+              private appComponent : AppComponent) { }
 
 
   ngOnInit() {
@@ -25,7 +27,7 @@ export class AnadirPersonaComponent implements OnInit {
     this.sevicioPersona.addPersona(this.persona).subscribe(data =>{
       this.route.navigate(['/personas']);
     },err => {
-      alert("Revise los campos "+err.message);
+      this.appComponent.errorMessages = ["Revise los campos "+err.message];
     });
     
 

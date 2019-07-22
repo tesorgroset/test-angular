@@ -1,6 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
+  <app-loader></app-loader>
   <app-menu></app-menu>
+  <div *ngFor="let msgError of errorMessages" class="alert alert-danger" role="alert">
+      {{msgError}}
+  </div>  
   <router-outlet></router-outlet>  
 </div>
 
