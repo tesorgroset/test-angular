@@ -27,6 +27,9 @@ import { LoaderComponent } from './components/shared/loader/loader.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoaderService } from './services/loader.service';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
+import {MatDialogModule} from '@angular/material/dialog'; 
+import {MatButtonModule} from '@angular/material/button';
+import { ConfirmationDialogComponent } from './components/shared/confirmation-dialog/confirmation-dialog.component'; 
 
 library.add(fas);
 
@@ -39,10 +42,13 @@ library.add(fas);
     AnadirPersonaComponent,
     EditarPersonaComponent,
     MenuComponent,
-    LoaderComponent
+    LoaderComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     MatProgressSpinnerModule,
+    MatDialogModule,
+    MatButtonModule,
     BrowserModule,
     AppRoutingModule,
     HttpModule,

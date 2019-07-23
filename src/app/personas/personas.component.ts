@@ -4,6 +4,8 @@ import { Persona } from '../app.persona';
 import { PersonService } from '../person.service';
 import * as _ from 'lodash';
 import { AppComponent } from '../app.component';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from '../components/shared/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-personas',
@@ -29,7 +31,8 @@ export class PersonasComponent implements OnInit {
   modeloCochecurrentsort: boolean;
 
   constructor(private personService : PersonService,
-    private appComponent : AppComponent) { }
+    private appComponent : AppComponent,
+    public dialog : MatDialog) { }
 
   ngOnInit() : void {
     console.log('ngOninit');
@@ -55,6 +58,20 @@ export class PersonasComponent implements OnInit {
     eval('this.'+tipoOrden+'currentsort = true');
     eval('this.'+tipoOrden+'sort = !this.'+tipoOrden+'sort');
   }
+
+  openDialog(id : number) : void {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      width : '350px', data : "¿Seguro que quieres borrar el registro?"
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result){
+        this.deletePerson(id);
+      }
+    })
+  }
+
+  
 
   public deletePerson(id : number) : void {
     this.personService.borrarPersona(id).subscribe(data => {

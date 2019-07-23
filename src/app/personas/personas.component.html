@@ -43,7 +43,7 @@
         <a class="badge badge-primary" routerLink="/editar-persona/{{persona.id}}">{{'botones.modificar' | translate}}</a>
       </td>
       <td>
-        <a class="badge badge-primary" [routerLink] = "" (click)="deletePerson(persona.id)">{{'botones.borrar' | translate}}</a>
+        <a class="badge badge-primary" [routerLink] = "" (click)="openDialog(persona.id)">{{'botones.borrar' | translate}}</a>
       </td>
     </tr>
   </tbody>
