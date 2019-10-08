@@ -26,7 +26,9 @@ export class AnadirPersonaComponent implements OnInit {
   public anadirPersona() : void {
     this.sevicioPersona.addPersona(this.persona).subscribe(data =>{
       this.route.navigate(['/personas']);
+      
     },err => {
+      console.log(err)
       this.appComponent.errorMessages = ["Revise los campos "+err.message];
     });
     

@@ -16,5 +16,7 @@
     "botones.cancelar" : "CANCELAR",
     "botones.modificar" : "Modificar",
     "botones.borrar" : "Borrar",
-    "botones.anadir" : "AÑADIR"
+    "botones.anadir" : "AÑADIR",
+    "error.unknown" : "Error inesperado. Vuelva a intentarlo mas tarde, si persiste pongase en contacto con el administrador",
+    "error.firstname.empty" : "Apellido no puede ser vacío"
 }

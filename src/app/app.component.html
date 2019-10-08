@@ -3,9 +3,9 @@
   <app-loader></app-loader>
   <app-menu></app-menu>
   <div *ngFor="let msgError of errorMessages" class="alert alert-danger" role="alert">
-      {{msgError}}
+      {{msgError | translate}}
   </div>  
-  <router-outlet></router-outlet>  
+  <router-outlet></router-outlet>
 </div>
 
 

@@ -14,5 +14,7 @@
     "botones.cancelar" : "CANCEL",
     "botones.modificar" : "Update",
     "botones.borrar" : "Delete",
-    "botones.anadir" : "ADD"    
+    "botones.anadir" : "ADD",
+    "error.unknown" : "Unexpected error. Try again later, if it persists contact the administrator",
+    "error.firstname.empty" : "Surname is empty"
 }

@@ -7,7 +7,7 @@ import { tap, catchError, filter} from 'rxjs/operators';
 const httpOptions = {
   headers: new HttpHeaders({'Content-type': 'application/json'})
 };
-const urlPersons = "http://localhost:8080/people";
+const urlPersons = "http://localhost:8080/persona";
 const urlAnioMatricula = "http://localhost:8080/personas/anio-matriculacion";
 
 @Injectable({
@@ -22,7 +22,7 @@ export class PersonService {
     private http:HttpClient
   ) { }
 
-  getAll(): Observable<Persona[]> {
+  public getAll(): Observable<Persona[]> {
     /*var arrPersonas : Persona[] = [
       {
         firstName : 'first name dummy 1',
@@ -47,18 +47,23 @@ export class PersonService {
     );*/
   }
 
-  getPerson(id:Number): Observable<Persona> {
+  public getPerson(id:Number): Observable<Persona> {
     const url = `${urlPersons}/${id}`;
     return this.http.get<Persona>(url);
   }
 
-  addPersona(persona : Persona): Observable<Persona> {
+  public addPersona(persona : Persona): Observable<Persona> {
     return this.http.post<Persona>(urlPersons, persona, httpOptions);
   }
 
-  borrarPersona(id : Number) : Observable<Persona>{
+  public borrarPersona(id : Number) : Observable<Persona>{
     const url = `${urlPersons}/${id}`;
     return this.http.delete<Persona>(url,httpOptions);
+  }
+
+  public updatePerson(persona : Persona) : Observable<Persona>{
+    const url = `${urlPersons}/${persona.id}`;
+    return this.http.put<Persona>(url, persona, httpOptions);
   }
 
   public obtenerAnioMatricula(matricula : string) : Observable<string>{

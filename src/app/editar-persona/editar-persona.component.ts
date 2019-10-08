@@ -30,10 +30,14 @@ export class EditarPersonaComponent implements OnInit {
   }
 
   public modificarPersona() : void{
-    this.personService.addPersona(this.persona).subscribe(data => {
+    if (this.persona.firstName.length > 5){
+      this.appComponent.errorMessages = ['longitud de First name mayor que 5'];
+    }
+    this.personService.updatePerson(this.persona).subscribe(data => {
       this.routeNav.navigate(['/personas']);
     },err => {
-      this.appComponent.errorMessages = ['Revise los campos: '+err.message];
+      console.log(err);
+      this.appComponent.errorMessages = [err.error];
     });
   }
 
