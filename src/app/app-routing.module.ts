@@ -4,6 +4,7 @@ import { PersonasComponent} from './personas/personas.component';
 import { EditarPersonaComponent} from './editar-persona/editar-persona.component';
 import { DetallePersonaComponent} from './detalle-persona/detalle-persona.component';
 import { AnadirPersonaComponent} from  './anadir-persona/anadir-persona.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
     {
@@ -25,6 +26,11 @@ const routes: Routes = [
       path: 'anadir-persona',
       component: AnadirPersonaComponent,
       data: { title: 'Añadir persona'}
+    },
+    {
+      path: 'login',
+      component: LoginComponent,
+      data: { title: 'Login'}
     }
 ];
 

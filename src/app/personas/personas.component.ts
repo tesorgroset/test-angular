@@ -82,7 +82,6 @@ export class PersonasComponent implements OnInit {
   private loadAll() : void {
     const observableAll : Observable<any> = this.personService.getAll();
     observableAll.subscribe(data => {
-      console.log('despues de suscribir');
       this.listaPersonas = data;
       this.orden('firstName');
     },err => {

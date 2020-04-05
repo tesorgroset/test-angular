@@ -16,5 +16,12 @@
     "botones.borrar" : "Delete",
     "botones.anadir" : "ADD",
     "error.unknown" : "Unexpected error. Try again later, if it persists contact the administrator",
-    "error.firstname.empty" : "Surname is empty"
+    "error.person.firstname.required" : "First name is required",
+    "error.person.firstname.length":"Firt name length must be between 3 and 17 characters",
+    "error.person.lastname.required" : "Last name is required",
+    "error.person.lastname.length" : "Last name length must be between 3 and 35 characters",
+    "error.person.edad.positive" : "Age is required",
+    "error.person.edad.range" : "Age value must be less than 125",
+    "error.person.matricula.required" : "Plate is required"
+
 }

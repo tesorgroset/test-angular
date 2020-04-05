@@ -18,5 +18,11 @@
     "botones.borrar" : "Borrar",
     "botones.anadir" : "AÑADIR",
     "error.unknown" : "Error inesperado. Vuelva a intentarlo mas tarde, si persiste pongase en contacto con el administrador",
-    "error.firstname.empty" : "Apellido no puede ser vacío"
+    "error.person.firstname.required" : "Nombre es obligatorio",
+    "error.person.firstname.length":"La longitud del nombre debe estar entre 3 y 17 caracteres",
+    "error.person.lastname.required" : "Apellido es obligatorio",
+    "error.person.lastname.length" : "La longitud del apellide debe estar entre 3 y 35 caracteres",
+    "error.person.edad.positive" : "Edad es obligatorio",
+    "error.person.edad.range" : "La longitud de la edad debe ser menos que 125",
+    "error.person.matricula.required" : "Matrícula es obligatorio"
 }

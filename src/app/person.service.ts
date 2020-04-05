@@ -7,8 +7,8 @@ import { tap, catchError, filter} from 'rxjs/operators';
 const httpOptions = {
   headers: new HttpHeaders({'Content-type': 'application/json'})
 };
-const urlPersons = "http://localhost:8080/persona";
-const urlAnioMatricula = "http://localhost:8080/personas/anio-matriculacion";
+const urlPersons = "http://localhost:8080/rest-angular/persona";
+const urlAnioMatricula = "http://localhost:8080/rest-angular/personas/anio-matriculacion";
 
 @Injectable({
   providedIn: 'root'
