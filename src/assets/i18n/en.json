@@ -23,5 +23,4 @@
     "error.person.edad.positive" : "Age is required",
     "error.person.edad.range" : "Age value must be less than 125",
     "error.person.matricula.required" : "Plate is required"
-
 }

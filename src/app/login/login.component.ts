@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticacionService } from '../serices/authenticacion.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  public user: string;
+
+  public pw: string;
+
+  constructor(private authenticacionService: AuthenticacionService) { }
 
   ngOnInit() {
+  }
+
+  login(){
+    
   }
 
 }
