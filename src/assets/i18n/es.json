@@ -28,5 +28,7 @@
     "error.person.lastname.length" : "La longitud del apellide debe estar entre 3 y 35 caracteres",
     "error.person.edad.positive" : "Edad es obligatorio",
     "error.person.edad.range" : "La longitud de la edad debe ser menos que 125",
-    "error.person.matricula.required" : "Matrícula es obligatorio"
+    "error.person.matricula.required" : "Matrícula es obligatorio",
+    "error.login.user.required":"Login es obligatorio",
+    "error.login.pw.required":"Password es obligatorio"
 }

@@ -9,6 +9,12 @@ import { AuthGuard } from './helpers/auth.guard';
 
 const routes: Routes = [
     {
+      path: '',
+      component: PersonasComponent,
+      data: { title: 'Listado de personas'},
+      canActivate: [AuthGuard]
+    },
+    {
       path: 'personas',
       component: PersonasComponent,
       data: { title: 'Listado de personas'},
