@@ -8,14 +8,14 @@
 
     <!-- Login Form -->
     <form>
-      <input type="text" id="login" class="fadeIn second" name="login" [(ngModel)]="user" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" [(ngModel)]="pw" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In" (click)="login()">
+      <input required type="text" id="login" class="fadeIn second" name="login" [(ngModel)]="user" placeholder="{{'login.user' | translate}}">
+      <input required type="text" id="password" class="fadeIn third" name="login" [(ngModel)]="pw" placeholder="{{'login.pw' | translate}}">
+      <input type="submit" class="fadeIn fourth" value="{{'login.login' | translate}}" (click)="login()">
     </form>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
+      <a class="underlineHover" href="#">{{'login.forgotpw' | translate}}</a>
     </div>
 
   </div>

@@ -12,6 +12,10 @@
     "personas.modificarpersona":"MODIFICACION DE PERSONA",
     "detallepersona.persona":"Persona",
 
+    "login.user":"login",
+    "login.pw":"password",
+    "login.forgotpw":"Olvidó la contraseña?",
+    "login.login":"LOG IN",
     "botones.enviar" : "ENVIAR",
     "botones.cancelar" : "CANCELAR",
     "botones.modificar" : "Modificar",
