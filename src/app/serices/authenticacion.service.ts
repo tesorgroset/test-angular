@@ -21,7 +21,7 @@ export class AuthenticacionService {
     }
 
     login(username: string, password: string) {
-        return this.http.post<any>(`${environment.apiUrl}/rest-angular/login`, { username, password })
+        return this.http.post<any>(`${environment.apiUrl}/rest-angular/login`, { "user":username, "password":password })
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('currentUser', JSON.stringify(user));

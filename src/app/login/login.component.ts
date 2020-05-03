@@ -26,14 +26,16 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+    console.log(this.user,this.pw);
     this.authenticacionService.login(this.user, this.pw)
     .pipe(first())
     .subscribe(
-        data => {
+        data => { 
             this.router.navigate([this.returnUrl]);
         },
         error => {
-          this.appComponent.errorMessages = error.errors;
+          this.appComponent.errorMessages = [];
+          this.appComponent.errorMessages.push(error);
         });    
   }
 

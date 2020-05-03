@@ -28,6 +28,7 @@ export class AppComponent implements OnInit{
   }
   
   ngOnInit(): void {
+    this.errorMessages = [];
     this.translateService.setDefaultLang(this.lenguajeActivo);
   }
 

@@ -36,7 +36,6 @@ export class PersonasComponent implements OnInit {
 
   ngOnInit() : void {
     console.log('ngOninit');
-    this.appComponent.errorMessages = [];
     this.loadAll();
   }
 
